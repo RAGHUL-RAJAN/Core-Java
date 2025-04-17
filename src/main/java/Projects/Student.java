@@ -1,5 +1,7 @@
 package Projects;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -27,19 +29,48 @@ public class Student {
 
 
 class StudentManagementSystem {
+
     public static void main(String[] args) {
+
+        Scanner nw = new Scanner(System.in);
+        String correctUserName = "admin123";
+        String correctPwd = "12345";
+        boolean loggedIn = false;
+        System.out.println("Welcome to Student Management system");
+
+        for (int i =0 ; i<= 3; i++){
+            System.out.println("Enter the UserName");
+            String userName = nw.nextLine();
+            System.out.println("Enter the Password");
+            String password = nw.nextLine();
+            if(userName.equals(correctUserName) && password.equals(correctPwd)){
+                System.out.println("Login Successful");
+                loggedIn = true;
+                break;
+            }else{
+                System.out.println("Incorrect credentials");
+            }
+        }
+        if(!loggedIn){
+            System.out.println("To many attempt please try again later..");
+            nw.close();
+            return;
+        }
+
         ArrayList<Student> students = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
+        System.out.println("Student Management System ");
 
         while (true) {
-            System.out.println("Student Management System ");
             System.out.println("1. Add Student");
             System.out.println("2. View All Students");
             System.out.println("3. Search student by name");
-            System.out.println("4. Exit");
-            System.out.println("5. Edit Roll Number");
-            System.out.println("6. Enter the roll number to delete");
-            System.out.println("choose an option (1-4) :");
+            System.out.println("4. Edit Roll Number");
+            System.out.println("5. Enter the roll number to delete");
+            System.out.println("6. Show total students");
+            System.out.println("7. Save students to File");
+            System.out.println("8. Exit");
+            System.out.println("choose an option (1-8) :");
             int choice = sc.nextInt();
             sc.nextLine();
 
@@ -79,9 +110,6 @@ class StudentManagementSystem {
                 }
 
             } else if (choice == 4) {
-                System.out.println("Exiting... Bye!");
-                break;
-            } else if (choice == 5) {
                 System.out.println("Enter the roll number of the student to edit");
                 int editRoll = sc.nextInt();
                 sc.nextLine();
@@ -107,7 +135,7 @@ class StudentManagementSystem {
                 }
                 break;
 
-            } else if (choice == 6) {
+            } else if (choice == 5) {
                 System.out.println("Enter the roll number to delete");
                 int deleteRoll = sc.nextInt();
                 sc.nextLine();
@@ -125,7 +153,25 @@ class StudentManagementSystem {
                 }
                 break;
 
-            } else {
+            } else if (choice == 6) {
+                System.out.println("Total number of students : " + students.size());
+                break;
+            } else if (choice == 7) {
+                try {
+                    FileWriter writer = new FileWriter("students.txt");
+                    for (Student s : students){
+                        writer.write(s.getName()+ ","+s.getRollNo()+"\n");
+                    }
+                    writer.close();
+                    System.out.println("Students saved to students.txt");
+                }catch (IOException e) {
+                    System.out.println("Error saving files "+ e.getMessage());
+                }
+                break;
+            } else if (choice == 8) {
+                System.out.println("Exiting... Bye!");
+                break;
+            }else {
                 System.out.println("Invalid choice. Try again!");
             }
         }
