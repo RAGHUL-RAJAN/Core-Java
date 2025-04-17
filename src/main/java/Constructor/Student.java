@@ -1,5 +1,7 @@
 package Constructor;
 
+// A constructor is a special method used to create an object and set values.
+
 public class Student {
     String name;
 
@@ -11,4 +13,6 @@ public class Student {
         System.out.println("Name of the student is "+ name);
     }
 }
+
+
 
