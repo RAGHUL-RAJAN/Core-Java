@@ -1,0 +1,39 @@
+Array is the collection of elements with collection of data ( Homogenous ), we can store multiple value into a single array
+
+Syntax :
+
+int a[] = new int [3]
+where 3 represent the size of any array
+
+Using Index we can extract the data from the array
+
+    index starts from 0
+
+    if the size of an array is 5, then the starting index is 0 & ending index is 4
+
+    Error :  ArrayIndexOutofExpression, when accessing the index 5 while the size of an array is 5
+
+    ==================================================================================================
+
+    * Single Dimensional
+    * Two Dimensional array
+
+Single Dimensional array :
+    1. Declare an array
+    2. add value to an array
+    3. Find the size of an array
+    4. read the single value from the array
+    5. read multiple value from the array
+
+    int a[] = new int [3];
+
+Two Dimensional array :
+    1. Declare an array
+    2. add value to an array
+    3. Find the size of an array
+    4. read the single value from the array
+    5. read multiple value from the array
+
+    int a[][] = new a[3][2];
+        * first index represent - rows
+        * second index represent - column
