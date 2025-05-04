@@ -12,6 +12,6 @@ public class methodpractise {
 
     public static void main(String[] args) {
         methodpractise mp = new methodpractise();
-        mp.m1();
+//        mp.m1();
     }
 }
