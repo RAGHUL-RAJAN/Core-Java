@@ -16,10 +16,9 @@ public class Student {
 
     public static void main(String[] args) {
 //  without using referrance variable for an object
-        new Student().sid = 101;
-        new Student().sName = "John";
-        new Student().grade = "A+";
-        new Student().display();
-
+//        new Student().sid = 101;
+//        new Student().sName = "John";
+//        new Student().grade = "A+";
+//        new Student().display();
     }
 }
