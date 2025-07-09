@@ -7,5 +7,6 @@ public class ArraySorting {
         int a[] = { 2,3,1,9,23,88,13};
         Arrays.sort(a);
         System.out.println(Arrays.toString(a));
+
     }
 }
