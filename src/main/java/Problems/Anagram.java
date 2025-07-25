@@ -1,6 +1,7 @@
 package Problems;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Anagram {
     public static void main(String[] args) {
@@ -11,6 +12,9 @@ public class Anagram {
         }
     }
     public static boolean checkAnagram(String a, String b){
+        a = a.replaceAll("\\s","").toLowerCase();
+        b = b.replaceAll("\\s","").toLowerCase();
+
         char[] a1 = a.toCharArray();
         char[] b1 = b.toCharArray();
         Arrays.sort(a1);
