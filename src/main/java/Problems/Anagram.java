@@ -1,7 +1,6 @@
 package Problems;
 
 import java.util.Arrays;
-import java.util.Locale;
 
 public class Anagram {
     public static void main(String[] args) {
