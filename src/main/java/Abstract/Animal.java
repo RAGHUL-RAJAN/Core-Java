@@ -19,7 +19,6 @@ class WildAnimals extends Animal{
         System.out.println("Sound");
     }
 }
-
 class Main{
     public static void main(String[] args) {
         WildAnimals wd = new WildAnimals();
